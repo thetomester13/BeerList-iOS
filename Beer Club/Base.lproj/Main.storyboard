@@ -44,6 +44,101 @@
             </objects>
             <point key="canvasLocation" x="821" y="-422"/>
         </scene>
+        <!--Add Brewery View Controller-->
+        <scene sceneID="QCw-7M-dUz">
+            <objects>
+                <viewController id="oCd-q4-xXm" customClass="AddBreweryViewController" customModule="Beer_Club" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LbY-Uz-N25"/>
+                        <viewControllerLayoutGuide type="bottom" id="jLN-iI-JIC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SAL-mY-KX7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Brewery!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeY-BS-x83">
+                                <rect key="frame" x="101" y="39" width="118" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="zhj-Eq-lhd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-Ov-BaL">
+                                <rect key="frame" x="16" y="77" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lrr-dL-57C">
+                                <rect key="frame" x="16" y="128" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tour time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYj-qt-349">
+                                <rect key="frame" x="16" y="180" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Brewery description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-2n-IpT">
+                                <rect key="frame" x="16" y="239" width="288" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Tcx-jf-cOt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I1-SC-Z2C">
+                                <rect key="frame" x="264" y="497" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="oCd-q4-xXm" eventType="touchUpInside" id="dwv-PZ-efT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRh-2W-csb">
+                                <rect key="frame" x="16" y="497" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="oCd-q4-xXm" eventType="touchUpInside" id="Ll1-10-IIM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RIL-2n-IpT" firstAttribute="width" secondItem="WYj-qt-349" secondAttribute="width" id="3AM-rw-fKT"/>
+                            <constraint firstItem="iIV-Ov-BaL" firstAttribute="top" secondItem="NeY-BS-x83" secondAttribute="bottom" constant="17" id="3Eh-H2-lzQ"/>
+                            <constraint firstItem="NeY-BS-x83" firstAttribute="top" secondItem="LbY-Uz-N25" secondAttribute="bottom" constant="19" id="4Mq-bD-Fb2"/>
+                            <constraint firstItem="jLN-iI-JIC" firstAttribute="top" secondItem="VRh-2W-csb" secondAttribute="bottom" constant="41" id="78p-Fk-Ntw"/>
+                            <constraint firstItem="Lrr-dL-57C" firstAttribute="centerX" secondItem="iIV-Ov-BaL" secondAttribute="centerX" id="9u0-dL-43n"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="iIV-Ov-BaL" secondAttribute="leading" id="AyT-xO-iT5"/>
+                            <constraint firstItem="jLN-iI-JIC" firstAttribute="top" secondItem="8I1-SC-Z2C" secondAttribute="bottom" constant="41" id="Fu9-7P-1zs"/>
+                            <constraint firstItem="Lrr-dL-57C" firstAttribute="width" secondItem="iIV-Ov-BaL" secondAttribute="width" id="JUv-xG-I3a"/>
+                            <constraint firstItem="WYj-qt-349" firstAttribute="top" secondItem="Lrr-dL-57C" secondAttribute="bottom" constant="22" id="P8O-Ja-XuF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="VRh-2W-csb" secondAttribute="leading" id="Z7R-P4-Q56"/>
+                            <constraint firstItem="Lrr-dL-57C" firstAttribute="top" secondItem="iIV-Ov-BaL" secondAttribute="bottom" constant="21" id="det-ZS-xRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8I1-SC-Z2C" secondAttribute="trailing" constant="6" id="g51-Yh-UCb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iIV-Ov-BaL" secondAttribute="trailing" id="kXe-7s-fKc"/>
+                            <constraint firstItem="WYj-qt-349" firstAttribute="centerX" secondItem="Lrr-dL-57C" secondAttribute="centerX" id="mTe-9p-i9r"/>
+                            <constraint firstItem="NeY-BS-x83" firstAttribute="centerX" secondItem="SAL-mY-KX7" secondAttribute="centerX" id="mv3-v3-Rqs"/>
+                            <constraint firstItem="RIL-2n-IpT" firstAttribute="top" secondItem="WYj-qt-349" secondAttribute="bottom" constant="29" id="raz-sN-gQA"/>
+                            <constraint firstItem="RIL-2n-IpT" firstAttribute="centerX" secondItem="WYj-qt-349" secondAttribute="centerX" id="ufk-x9-gxa"/>
+                            <constraint firstItem="WYj-qt-349" firstAttribute="width" secondItem="Lrr-dL-57C" secondAttribute="width" id="w8X-qe-6GF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="VRh-2W-csb" id="jIW-sj-Q6F"/>
+                        <outlet property="descriptionTextView" destination="RIL-2n-IpT" id="XmU-XC-FvM"/>
+                        <outlet property="nameTextField" destination="iIV-Ov-BaL" id="U5J-IP-pxe"/>
+                        <outlet property="nicknameTextField" destination="Lrr-dL-57C" id="jI1-pT-dlV"/>
+                        <outlet property="saveButton" destination="8I1-SC-Z2C" id="Kj9-iD-CZU"/>
+                        <outlet property="tourtimeTextField" destination="WYj-qt-349" id="0d9-8b-fLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFL-NP-Qs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-426"/>
+        </scene>
         <!--Brewery List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
