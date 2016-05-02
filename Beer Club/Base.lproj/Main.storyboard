@@ -36,6 +36,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="b4H-Bf-I40"/>
+                    <connections>
+                        <segue destination="cLL-tJ-Qbg" kind="push" identifier="showDetails" id="90V-7F-1J1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yk0-Fq-50P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,4 +335,7 @@
     <resources>
         <image name="beer" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="90V-7F-1J1"/>
+    </inferredMetricsTieBreakers>
 </document>

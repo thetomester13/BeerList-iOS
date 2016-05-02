@@ -98,11 +98,28 @@ class BeersTableViewController: UITableViewController {
     }
     
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        //
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentBrewery = self.breweries[indexPath.row]
+        print(currentBrewery.name)
+        
+        self.performSegueWithIdentifier("showDetails", sender: indexPath)
+    }
  
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showDetails" {
+            let detailedBreweryViewController = segue.destinationViewController as! DetailedBreweryViewController
+            
+            let indexPath = sender as! NSIndexPath
+            detailedBreweryViewController.brewery = breweries[indexPath.row]
+            //detailedBreweryViewController.breweryIndex = breweryButton.tag
+            
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
