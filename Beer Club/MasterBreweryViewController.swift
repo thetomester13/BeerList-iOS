@@ -22,7 +22,7 @@ class MasterBreweryViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let ref = Firebase(url:"https://beerclub2.firebaseio.com/breweries")
+        let ref = Firebase(url:"https://beer-finder.firebaseio.com/breweries")
         
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in // Reads data from the database

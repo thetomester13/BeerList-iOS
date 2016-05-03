@@ -60,7 +60,7 @@ class BeersTableViewController: UITableViewController {
     }
     
     func addBeer(){
-        
+        self.performSegueWithIdentifier("addBrewery", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

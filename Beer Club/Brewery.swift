@@ -32,9 +32,9 @@ struct Brewery {
         self.id = snapshot.key
         self.name = snapshot.value["name"] as! String
         self.nickname = snapshot.value["nickname"] as! String
-        self.logo = snapshot.value["logo"] as! String
+        self.logo = snapshot.value["logo"] as? String ?? "beer"
         self.description = snapshot.value["description"] as! String
         self.tourTime = snapshot.value["tourTime"] as! String
-        self.addressLink = snapshot.value["addressLink"] as! String
+        self.addressLink = snapshot.value["addressLink"] as? String ?? ""
     }
 }

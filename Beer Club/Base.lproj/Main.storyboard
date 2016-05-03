@@ -38,6 +38,7 @@
                     <navigationItem key="navigationItem" id="b4H-Bf-I40"/>
                     <connections>
                         <segue destination="cLL-tJ-Qbg" kind="push" identifier="showDetails" id="90V-7F-1J1"/>
+                        <segue destination="oCd-q4-xXm" kind="modal" identifier="addBrewery" id="FJN-TJ-BrH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yk0-Fq-50P" userLabel="First Responder" sceneMemberID="firstResponder"/>
