@@ -13,14 +13,25 @@ class BeersTableViewController: UITableViewController {
 
     let reuseID = "BeerCell"
     var breweries = [Brewery]()
+    var loadingIdicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        loadingIdicator = UIActivityIndicatorView(frame: CGRect(x: (self.tableView.frame.size.width/2 - 20) , y: (self.tableView.frame.size.height/2 - 20 ) , width: 40, height: 40))
+        
+        loadingIdicator.color = UIColor.redColor()
         
         tableView.registerNib(UINib(nibName: "BeerTableViewCell", bundle: nil), forCellReuseIdentifier: reuseID)
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        self.tableView.addSubview(loadingIdicator)
+        loadingIdicator.startAnimating()
+        
+        
 
         self.navigationItem.title = "Beer List"
 
@@ -47,6 +58,7 @@ class BeersTableViewController: UITableViewController {
             
             self.breweries = newItems
             self.tableView.reloadData()
+            self.loadingIdicator.stopAnimating()
             
            // self.renderViews()
             
