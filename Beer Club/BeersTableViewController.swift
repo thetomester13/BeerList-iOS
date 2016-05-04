@@ -83,6 +83,29 @@ class BeersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 110.0
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        //
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
+            
+            let currentBrewery = self.breweries[indexPath.row]
+            let ref = Firebase(url:"https://beer-finder.firebaseio.com/breweries/\(currentBrewery.id)")
+                        
+            ref.removeValue()
+
+            print("action is  \(action) and indexpath is \(indexPath)")
+        }
+        
+        return [deleteAction]
+    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
