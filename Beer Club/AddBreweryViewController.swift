@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddBreweryViewController: UIViewController {
+class AddBreweryViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
@@ -19,10 +19,30 @@ class AddBreweryViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet var addPhotoImageView: UIImageView!
+    
+    var imagePicker:UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBreweryViewController.photoTapped))
+        tapRecognizer.numberOfTapsRequired = 1
+        addPhotoImageView.userInteractionEnabled = true
+        addPhotoImageView.addGestureRecognizer(tapRecognizer)
+        
+        
+        imagePicker = UIImagePickerController()
+        //imagePicker.sourceType = .PhotoLibrary
+        imagePicker.sourceType = .Camera
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func photoTapped(){
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -47,12 +67,16 @@ class AddBreweryViewController: UIViewController {
         if (nameValid && nicknameValid && tourTimeValid && descValid) {
             
             print("let user save")
+            let image = self.addPhotoImageView.image
+            let imageData = UIImageJPEGRepresentation(image!, 0.7)
+            let base64String =  imageData?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
             
             let newBreweryDict = [
                 "name" : nameTextField.text,
                 "nickname" : nicknameTextField.text,
                 "tourTime" : tourtimeTextField.text,
-                "description" : descriptionTextView.text
+                "description" : descriptionTextView.text,
+                "logo" : base64String
             ]
             
             let ref = Firebase(url:"https://beer-finder.firebaseio.com/breweries")
@@ -73,6 +97,7 @@ class AddBreweryViewController: UIViewController {
                 self.nicknameTextField.text = ""
                 self.tourtimeTextField.text = ""
                 self.descriptionTextView.text = "Brewery description..."
+                self.addPhotoImageView.image = UIImage(named: "beer")
             })
             alertController.addAction(resetAction)
             
@@ -105,4 +130,25 @@ class AddBreweryViewController: UIViewController {
     }
     */
 
+}
+
+//MARK: Image picker functions
+extension AddBreweryViewController: UIImagePickerControllerDelegate{
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        //gets called after photo selected
+        if let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            self.addPhotoImageView.image = selectedImage
+            self.addPhotoImageView.contentMode = .ScaleAspectFit
+
+        }
+        
+        self.imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        //gets called when image cancelled
+        self.imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

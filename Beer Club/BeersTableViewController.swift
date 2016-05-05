@@ -127,7 +127,16 @@ class BeersTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.beerNameLabel.text = currentBrewery.nickname
-        cell.beerImageView.image = UIImage(named: currentBrewery.logo)
+        
+        if let localImage = UIImage(named: currentBrewery.logo){
+            cell.beerImageView.image = localImage
+        }
+        else{
+            let base64String = currentBrewery.logo
+            let imageData = NSData(base64EncodedString: base64String, options: .IgnoreUnknownCharacters)
+            let decodedImage = UIImage(data: imageData!)
+            cell.beerImageView.image = decodedImage
+        }
 
         return cell
     }

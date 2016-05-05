@@ -67,22 +67,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-Ov-BaL">
-                                <rect key="frame" x="16" y="77" width="288" height="30"/>
+                                <rect key="frame" x="16" y="230" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lrr-dL-57C">
-                                <rect key="frame" x="16" y="128" width="288" height="30"/>
+                                <rect key="frame" x="16" y="281" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tour time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYj-qt-349">
-                                <rect key="frame" x="16" y="180" width="288" height="30"/>
+                                <rect key="frame" x="16" y="333" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Brewery description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-2n-IpT">
-                                <rect key="frame" x="16" y="239" width="288" height="128"/>
+                                <rect key="frame" x="16" y="392" width="288" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Tcx-jf-cOt"/>
@@ -104,30 +104,49 @@
                                     <action selector="cancelButtonTapped:" destination="oCd-q4-xXm" eventType="touchUpInside" id="Ll1-10-IIM"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="qof-JT-CJU">
+                                <rect key="frame" x="40" y="68" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0zE-xf-gX7"/>
+                                    <constraint firstAttribute="width" constant="240" id="fqC-tL-gY0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the Beer to upload photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEY-06-Mcf">
+                                <rect key="frame" x="49" y="196" width="223" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GEY-06-Mcf" firstAttribute="centerX" secondItem="SAL-mY-KX7" secondAttribute="centerX" id="1cR-aR-A92"/>
                             <constraint firstItem="RIL-2n-IpT" firstAttribute="width" secondItem="WYj-qt-349" secondAttribute="width" id="3AM-rw-fKT"/>
-                            <constraint firstItem="iIV-Ov-BaL" firstAttribute="top" secondItem="NeY-BS-x83" secondAttribute="bottom" constant="17" id="3Eh-H2-lzQ"/>
                             <constraint firstItem="NeY-BS-x83" firstAttribute="top" secondItem="LbY-Uz-N25" secondAttribute="bottom" constant="19" id="4Mq-bD-Fb2"/>
                             <constraint firstItem="jLN-iI-JIC" firstAttribute="top" secondItem="VRh-2W-csb" secondAttribute="bottom" constant="41" id="78p-Fk-Ntw"/>
                             <constraint firstItem="Lrr-dL-57C" firstAttribute="centerX" secondItem="iIV-Ov-BaL" secondAttribute="centerX" id="9u0-dL-43n"/>
                             <constraint firstAttribute="leadingMargin" secondItem="iIV-Ov-BaL" secondAttribute="leading" id="AyT-xO-iT5"/>
                             <constraint firstItem="jLN-iI-JIC" firstAttribute="top" secondItem="8I1-SC-Z2C" secondAttribute="bottom" constant="41" id="Fu9-7P-1zs"/>
                             <constraint firstItem="Lrr-dL-57C" firstAttribute="width" secondItem="iIV-Ov-BaL" secondAttribute="width" id="JUv-xG-I3a"/>
+                            <constraint firstItem="GEY-06-Mcf" firstAttribute="top" secondItem="qof-JT-CJU" secondAttribute="bottom" id="M4S-rN-rGx"/>
+                            <constraint firstItem="iIV-Ov-BaL" firstAttribute="top" secondItem="qof-JT-CJU" secondAttribute="bottom" constant="34" id="Mue-Y1-CJV"/>
                             <constraint firstItem="WYj-qt-349" firstAttribute="top" secondItem="Lrr-dL-57C" secondAttribute="bottom" constant="22" id="P8O-Ja-XuF"/>
+                            <constraint firstItem="iIV-Ov-BaL" firstAttribute="top" secondItem="GEY-06-Mcf" secondAttribute="bottom" constant="13" id="QtY-9O-yAF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="VRh-2W-csb" secondAttribute="leading" id="Z7R-P4-Q56"/>
                             <constraint firstItem="Lrr-dL-57C" firstAttribute="top" secondItem="iIV-Ov-BaL" secondAttribute="bottom" constant="21" id="det-ZS-xRm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8I1-SC-Z2C" secondAttribute="trailing" constant="6" id="g51-Yh-UCb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iIV-Ov-BaL" secondAttribute="trailing" id="kXe-7s-fKc"/>
+                            <constraint firstItem="qof-JT-CJU" firstAttribute="centerX" secondItem="SAL-mY-KX7" secondAttribute="centerX" id="kiV-yl-vto"/>
                             <constraint firstItem="WYj-qt-349" firstAttribute="centerX" secondItem="Lrr-dL-57C" secondAttribute="centerX" id="mTe-9p-i9r"/>
                             <constraint firstItem="NeY-BS-x83" firstAttribute="centerX" secondItem="SAL-mY-KX7" secondAttribute="centerX" id="mv3-v3-Rqs"/>
+                            <constraint firstItem="qof-JT-CJU" firstAttribute="top" secondItem="NeY-BS-x83" secondAttribute="bottom" constant="8" id="nmg-0m-j5c"/>
                             <constraint firstItem="RIL-2n-IpT" firstAttribute="top" secondItem="WYj-qt-349" secondAttribute="bottom" constant="29" id="raz-sN-gQA"/>
                             <constraint firstItem="RIL-2n-IpT" firstAttribute="centerX" secondItem="WYj-qt-349" secondAttribute="centerX" id="ufk-x9-gxa"/>
                             <constraint firstItem="WYj-qt-349" firstAttribute="width" secondItem="Lrr-dL-57C" secondAttribute="width" id="w8X-qe-6GF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPhotoImageView" destination="qof-JT-CJU" id="te8-06-cjR"/>
                         <outlet property="cancelButton" destination="VRh-2W-csb" id="jIW-sj-Q6F"/>
                         <outlet property="descriptionTextView" destination="RIL-2n-IpT" id="XmU-XC-FvM"/>
                         <outlet property="nameTextField" destination="iIV-Ov-BaL" id="U5J-IP-pxe"/>

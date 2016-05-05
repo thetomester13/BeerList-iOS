@@ -40,7 +40,17 @@ class DetailedBreweryViewController: UIViewController {
         tourInfoLabel.text = myTourInfoLabelText
         tourTimes.textColor = myTourTimeColor
         breweryDescriptionLabel.text = brewery.description
-        logoImage.image = UIImage(named: brewery.logo)
+        //logoImage.image = UIImage(named: brewery.logo)
+        
+        if let localImage = UIImage(named: brewery.logo){
+           logoImage.image = localImage
+        }
+        else{
+            let base64String = brewery.logo
+            let imageData = NSData(base64EncodedString: base64String, options: .IgnoreUnknownCharacters)
+            let decodedImage = UIImage(data: imageData!)
+            logoImage.image = decodedImage
+        }
     }
     
     @IBAction func mapsButtonTapped(sender: AnyObject) {
